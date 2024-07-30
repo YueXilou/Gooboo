@@ -30,7 +30,7 @@ for i in range(16):
     op_pack.load_picture(cv2.imread('./data/num'+str(i)+'.jpg'))
 for i in range(2):
     state_pack.load_picture(cv2.imread('./data/state_'+str(i)+'.jpg'))
-input_area = tools.Area(op_pack, [600, 215], 700, 55, 0.7)
+input_area = tools.Area(op_pack, [50, 215], 1800, 55, 0.7)
 state_area = tools.Area(state_pack, [35, 157], 1443, 389, 0.8)
 
 time.sleep(2)
@@ -38,7 +38,6 @@ time.sleep(2)
 # k-range can be changed.
 for k in range(10000):
 
-    time.sleep(0.2)
     temp = tools.screenshot()
 
     state, _, state_place = state_area.match(temp, type=1)
